@@ -16,7 +16,7 @@ const Login = () => {
   }
   return (
     <div className='flex flex-col items-center justify-center min-h-screen py-2'>
-      <h1>Login</h1>
+      <h1>Loginn</h1>
      
 <hr/>
       <hr/>
