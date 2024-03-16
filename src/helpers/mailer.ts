@@ -38,14 +38,15 @@ var transport = nodemailer.createTransport({
       pass: "0e248a20898d88"
     }
   });
-
-  const mailOptions={
+  // verifyForgotPassword
+  // verifyemail
+  const mailOptions = {
     from: 'rahul.verma@datapure.co', // sender address
     to: email, // list of receivers
-    subject: emailtype=="VERIFY"?"Verify your email":"Reset your Password", // Subject line
+    subject: emailtype === "VERIFY" ? "Verify your email" : "Reset your Password", // Subject line
+    html: `<b>Click <a href="${process.env.DOMAIN}/${emailtype === "VERIFY" ? "verifyemail" : "verifyForgotPassword"}?token=${hashedToken}">Here</a> to ${emailtype === "VERIFY" ? "Verify your email" : "reset your password"} </b> <p>copy and paste the link below in your browser.<br/> <b>  ${process.env.DOMAIN}/${emailtype === "VERIFY" ? "verifyemail" : "verifyForgotPassword"}?token=${hashedToken} </b></p>`, // html body
+  };
   
-    html: `<b>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">Here</a> to ${emailtype=="VERIFY"?"Verify your email":"reset your password"} </b> <p>copy and paste the link below in your browser.<br/> <b>  ${process.env.DOMAIN}/verifyemail?token=${hashedToken} </b></p>`, // html body
-  }
 
   const mailresponse= await transport.sendMail(mailOptions)
   return mailresponse;

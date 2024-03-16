@@ -64,6 +64,7 @@ setLoading(false)
       className='p-4 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600'  id='password' value={user.password} onChange={(e)=>setUser({...user, password:e.target.value})} placeholder='password'/>
       <button className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600' onClick={onLogin}>{buttonDisabled?"No Login":"Login"}</button>
       <Link href={"/signup"}>Go to SignUp</Link>
+      <Link href={"/forgotpassword"}>Forgot Password</Link>
       
       </div>
    

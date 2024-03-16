@@ -21,7 +21,7 @@ console.log("user",user);
        }
 
        console.log(user);
-       user.isVerified=true;
+       user.isVerfied=true;
        user.verifyToken=undefined;
        user.verifyTokenExpiry=undefined;
        await user.save()
