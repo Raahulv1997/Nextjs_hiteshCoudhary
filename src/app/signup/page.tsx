@@ -27,8 +27,6 @@ const SignUp = () => {
       console.log("signup failed",error);
       
       toast.error(error.message)
-    }finally{
-
     }
   };
 
